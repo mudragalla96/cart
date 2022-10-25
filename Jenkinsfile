@@ -11,12 +11,18 @@ pipeline {
     }
 
     stage('Style Checks') {
+      when {
+        branch 'main'
+      }
       steps {
         echo 'Style Checks'
       }
     }
 
     stage('Unit Tests') {
+      when {
+        branch 'main'
+      }
       steps {
         echo 'Unit Tests'
       }
