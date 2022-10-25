@@ -21,7 +21,10 @@ pipeline {
 
     stage('Unit Tests') {
       when {
+       anyOf {
         branch 'main'
+        tag "*"
+        }
       }
       steps {
         echo 'Unit Tests'
